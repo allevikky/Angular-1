@@ -7,16 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { OverlayComponent } from './overlay/overlay.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    OverlayComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, HomeComponent, OverlayComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -8,7 +8,7 @@ describe('OverlayComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [OverlayComponent]
+      declarations: [OverlayComponent],
     });
     fixture = TestBed.createComponent(OverlayComponent);
     component = fixture.componentInstance;
