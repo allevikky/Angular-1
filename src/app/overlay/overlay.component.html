@@ -1,7 +1,14 @@
 <ng-template #templatePortalContent>
   <div class="overlay-container">
     <div class="overlay-header">
-      <h4 class="overlay-title">{{ productDetails.title }}</h4>
+      <button
+        type="button"
+        class="close-icon btn btn-light btn-sm"
+        (click)="close()"
+      >
+        X
+      </button>
+      <h5 class="overlay-title">{{ productDetails.title }}</h5>
     </div>
     <div class="d-flex flex-column">
       <div class="row text-center">

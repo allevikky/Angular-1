@@ -45,4 +45,8 @@ export class OverlayComponent {
 
     this.overlayRef.backdropClick().subscribe(() => this.overlayRef?.detach());
   }
+
+  close(): void {
+    this.overlayRef?.detach();
+  }
 }
