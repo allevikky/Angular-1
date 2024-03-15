@@ -3,16 +3,19 @@
     <table  class="table table-bordered">
         <thead class="thead-dark">
             <tr>
+                <th scope="col">Id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Category</th>
                 <th scope="col">Proce</th>
             </tr>
         </thead>
         <tr *ngFor="let item of products">
+            <td><a href="javascript:void(0)"  (click)="titleClicked($event, item.id)"><span id="spnId">{{item.id}}</span></a></td>
             <td>{{item.title}}</td>
             <td>{{item.category}}</td>
             <td>{{item.price}}</td>
         </tr>
     </table>
+    <app-overlay #overlaycontent></app-overlay>
 </div>
 

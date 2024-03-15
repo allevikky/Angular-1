@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { HomeService } from './home.service';
 import {  Product } from './home.module';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { OverlayComponent } from '../overlay/overlay.component';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,12 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy{
+
   products: Product[] = [];
   productsSubs$: Subscription = new Subscription();
+
+  @ViewChild('overlaycontent', {static: true})
+  overlayContent: OverlayComponent | undefined;
   
   
 
@@ -25,6 +30,13 @@ export class HomeComponent implements OnInit, OnDestroy{
       });
   }
 
+  titleClicked(e: Event, id: string): void {
+
+    console.log(id);
+    const productDetails = this.products.filter((item) => {return item.id === id});
+    this.overlayContent?.displayOverlay(productDetails[0]);
+
+  }
   
   ngOnDestroy(): void {
     this.productsSubs$.unsubscribe;
